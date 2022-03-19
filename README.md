@@ -35,4 +35,4 @@ All branches do not have small notes or cents for each foreign currency. So for 
 -   Persistence can choose from file, in-memory DB or purely memory, as long as the entity structures are clear.
 -   Write Unit Test. No need to achieve high coverage if time does not allow.
 -   Enough logging for troubleshooting.
--   Any additional feature that will help business grow.
+-   Any additional feature that will help business grow - Added a feature to show the total of transactions for each currency sorted from highest to lowest transactions.
