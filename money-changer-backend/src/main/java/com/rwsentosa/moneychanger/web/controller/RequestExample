@@ -1,0 +1,85 @@
+1) localhost:8080/money-changer/api/currency/findAll - Show all currency and rates
+2) localhost:8080/money-changer/api/currency/findByCode/{currcode} - Show rates based on code
+3) localhost:8080/money-changer/api/currency/findBuyAmtByCode - Display rates based on code and show before and after exchange amt
+{
+    "code" : "USD",
+    "amt" : 200
+}
+output
+[
+    {
+        "currency_code": "USD",
+        "transaction_type": "Sell",
+        "transaction_rate": 1.3392,
+        "receive_amt": 200.0,
+        "release_amt": 267.8,
+        "created_by": null,
+        "created_time": null
+    }
+]
+4) localhost:8080/money-changer/api/currency/findSellAmtByCode - Display rates based on code and show before and after exchange amt, follow by suggestion
+[
+    {
+        "currency_code": "HKD",
+        "transaction_type": "Sell",
+        "transaction_rate": 0.1698,
+        "receive_amt": 435.0,
+        "release_amt": 2561.8,
+        "created_by": null,
+        "created_time": null
+    },
+    {
+        "currency_code": "HKD",
+        "transaction_type": "Sell",
+        "transaction_rate": 0.1698,
+        "receive_amt": 441.0,
+        "release_amt": 2600.0,
+        "created_by": null,
+        "created_time": null
+    }
+]
+
+5) localhost:8080/money-changer/api/transactions/post - Save Transaction of each exchange
+{
+
+        "currency_code": "HKD",
+        "transaction_type": "Sell",
+        "transaction_rate": 1.3574,
+        "release_amt": 1234,
+        "receive_amt": 1444,
+        "created_by" : "adm"
+
+
+}
+6) localhost:8080/money-changer/api/transactions/findAll - See all transactions details
+[
+    {
+        "currency_code": "USD",
+        "transaction_type": "Buy",
+        "transaction_rate": 1.3392,
+        "receive_amt": 130.0,
+        "release_amt": 174.1,
+        "created_by": "system",
+        "created_time": "2022-03-19T20:25:28.255759+08:00"
+    },
+    {
+        "currency_code": "USD",
+        "transaction_type": "Sell",
+        "transaction_rate": 1.3574,
+        "receive_amt": 271.5,
+        "release_amt": 200.0,
+        "created_by": "system",
+        "created_time": "2022-03-19T20:25:28.255759+08:00"
+    }
+]
+7)  localhost:8080/money-changer/api/transactions/findTransactionByCurrency - Show currencies that has the most transactions to the least transactions
+[
+    {
+        "currencyCode": "USD",
+        "total": 2
+    },
+    {
+        "currencyCode": "HKD",
+        "total": 1
+    }
+]

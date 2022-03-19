@@ -1,0 +1,16 @@
+### port ###
+server:
+  port: 8080
+  servlet:
+    context-path: /money-changer/api
+
+### spring config ###
+spring:
+  # jdbc
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    show-sql: true
